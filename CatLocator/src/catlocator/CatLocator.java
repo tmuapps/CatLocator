@@ -114,7 +114,7 @@ public class CatLocator {
             Station catInitialStation = SimpleHopper.getNextStation(allStations);
             
             //Instantiate a cat, placing it at the new station
-            SimpleHopper cat = new SimpleHopper(catInitialStation);
+            SimpleHopper cat = new SimpleHopper(i, catInitialStation);
             
             //Get the initial station for the cat's owner
             Station ownerInitialStation = SimpleHopper.getNextStation(allStations);
@@ -128,7 +128,7 @@ public class CatLocator {
             }
 
             //Instantiate the cat's owner, placing it at the new station
-            CleverHopper owner = new CleverHopper(ownerInitialStation);
+            CleverHopper owner = new CleverHopper(i, ownerInitialStation);
             
             //Store the cat owner pairs in the lost list.
             catOwnerPairsLost.put(cat, owner);
@@ -161,6 +161,11 @@ public class CatLocator {
                     catOwnerPairsTogether.put(cat, owner);
                     //Close the station (immediately?)
                     owner.currentStation.close();
+                    
+                    //Owner 14 found cat 14 - Picadilly Circus is now closed.
+                    System.out.println("Owner " + owner.id + " found cat " + cat.id
+                            + " - " + owner.currentStation.getName() + " now closed.");
+                    
                 }
                 
             }

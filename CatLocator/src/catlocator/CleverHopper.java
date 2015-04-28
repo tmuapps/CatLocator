@@ -18,8 +18,8 @@ public class CleverHopper extends SimpleHopper{
     //Remember which connections have been used from which stations
     private Map<Station, List<Station>> previousConnectionsFromStations = new HashMap<>();
     
-    CleverHopper(Station initialStation) {
-        super(initialStation);
+    CleverHopper(int id, Station initialStation) {
+        super(id, initialStation);
         previousConnectionsFromStations.put(initialStation, new ArrayList<Station>());
     }
     

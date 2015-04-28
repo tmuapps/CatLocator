@@ -15,11 +15,15 @@ public class SimpleHopper {
     
     static Random random = new Random();
 
+    //Identifies the Simple hopper.
+    final protected int id;
+
     protected int hopCount = 0;
     protected Station currentStation;
     
-    SimpleHopper(Station initialStation) {
+    SimpleHopper(int id, Station initialStation) {
         currentStation = initialStation;
+        this.id = id;
     }
     
     public void hop() {
