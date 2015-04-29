@@ -23,6 +23,11 @@ public class CleverHopper extends SimpleHopper{
         previousConnectionsFromStations.put(initialStation, new ArrayList<Station>());
     }
     
+    /**
+     * If possible, hops this hopper to another open station, without using a previously used connection
+     * If the only available connections to other stations have already been used, use one.
+     * If there are no available connection, stay put.
+     */
     @Override
     public void hop() {
         

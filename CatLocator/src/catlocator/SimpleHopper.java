@@ -26,6 +26,10 @@ public class SimpleHopper {
         this.id = id;
     }
     
+    /**
+     * If possible hops this hopper to another open station.
+     * If there are no available connection, stay put.
+     */
     public void hop() {
         
         Station nextStation = getNextStation(currentStation.getOpenConnections());
